@@ -17,6 +17,12 @@ dsh plugin --profile web add dsh-auto-model
 
 发布前确认 `engines.dsh` 覆盖目标 DSH 版本，`npm test` 通过。
 
+发布成功后，可在 README 顶部补回 npm 版本徽章：
+
+```markdown
+[![npm](https://img.shields.io/npm/v/dsh-auto-model)](https://www.npmjs.com/package/dsh-auto-model)
+```
+
 ## 进入市场
 
 ### dshmarket

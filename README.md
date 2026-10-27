@@ -1,8 +1,7 @@
 # 自动模型（Auto Model）
 
 [![test](https://github.com/vener0/dsh-auto-model/actions/workflows/test.yml/badge.svg)](https://github.com/vener0/dsh-auto-model/actions/workflows/test.yml)
-[![npm](https://img.shields.io/npm/v/dsh-auto-model)](https://www.npmjs.com/package/dsh-auto-model)
-[![license](https://img.shields.io/npm/l/dsh-auto-model)](LICENSE)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 给 DeepSeek Harness 增加一个可切换的 **“自动选择”** 模型：模型选择器里出现 **“自动（Auto） → 自动选择”**。选中后，由**主模型**读取副模型清单（参数、输入/输出类型、能力标签、本地配置），为当前任务挑选执行模型；请求由被选中的副模型完成，回复开头标注本次选用。
 
