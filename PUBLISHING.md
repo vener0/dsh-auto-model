@@ -44,6 +44,16 @@ DSH 的 Discover 读取用户配置的 format-1 索引。把 `market-index.examp
 - dshmarket 目前不支持原地升级，升级需卸载后重装；
 - 发现 DSH 新版本改动 `ctx.llm` API 时，及时更新 `engines.dsh`。
 
+## 推送重试
+
+GitHub 连接不稳时，用仓库内的重试脚本反复推送，直到远端 tag 指向本地 HEAD：
+
+```powershell
+pwsh -File scripts/push-retry.ps1
+```
+
+可调参数：`-IntervalSeconds 10`（重试间隔）、`-MaxAttempts 0`（0 = 一直重试）、`-SkipMain`（只推 tag）。
+
 ## 安全
 
 - 不要提交 API Key、token、个人路径；
