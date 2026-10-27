@@ -66,22 +66,22 @@ while ($true) {
   $ok = $true
 
   if (-not $SkipMain) {
-    $main = Run-Git -GitArgs @('push', 'origin', $Branch)
-    if ($main.Code -ne 0) {
+    $mainResult = Run-Git -GitArgs @('push', 'origin', $Branch)
+    if ($mainResult.Code -ne 0) {
       $ok = $false
       Write-Host "  main push failed" -ForegroundColor Yellow
-      Write-Host "  $($main.Output)" -ForegroundColor DarkYellow
+      Write-Host "  $($mainResult.Output)" -ForegroundColor DarkYellow
     } else {
       Write-Host "  main pushed" -ForegroundColor Green
     }
   }
 
   if ($ok) {
-    $tag = Run-Git -GitArgs @('push', '-f', 'origin', $Tag)
-    if ($tag.Code -ne 0) {
+    $tagResult = Run-Git -GitArgs @('push', '-f', 'origin', $Tag)
+    if ($tagResult.Code -ne 0) {
       $ok = $false
       Write-Host "  tag push failed" -ForegroundColor Yellow
-      Write-Host "  $($tag.Output)" -ForegroundColor DarkYellow
+      Write-Host "  $($tagResult.Output)" -ForegroundColor DarkYellow
     } else {
       Write-Host "  tag pushed" -ForegroundColor Green
     }
