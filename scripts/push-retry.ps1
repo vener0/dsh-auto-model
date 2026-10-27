@@ -26,16 +26,20 @@ Set-Location $repo
 
 function Run-Git {
   param([string[]]$GitArgs)
-  $output = & git @GitArgs 2>&1
+  $output = (& git @GitArgs 2>&1 | Out-String).Trim()
   $code = $LASTEXITCODE
   return [pscustomobject]@{
     Code = $code
-    Output = (($output | Out-String).Trim())
+    Output = $output
   }
 }
 
 function Get-LocalHead {
   (Run-Git -GitArgs @('rev-parse', 'HEAD')).Output
+}
+
+function Get-LocalTagSha {
+  (Run-Git -GitArgs @('rev-parse', "refs/tags/$Tag")).Output
 }
 
 function Get-RemoteTagSha {
@@ -84,16 +88,20 @@ while ($true) {
   }
 
   if ($ok) {
-    $local = Get-LocalHead
+    $local = Get-LocalTagSha
+    $head = Get-LocalHead
     $remote = Get-RemoteTagSha
     if ($null -eq $remote) {
       $ok = $false
       Write-Host "  remote tag not found yet" -ForegroundColor Yellow
     } elseif ($remote -ne $local) {
       $ok = $false
-      Write-Host "  remote tag mismatch: local=$local remote=$remote (will force again)" -ForegroundColor Yellow
+      Write-Host "  remote tag mismatch: local tag=$local remote=$remote (will force again)" -ForegroundColor Yellow
     } else {
       Write-Host "  verified: $Tag -> $local" -ForegroundColor Green
+      if ($head -ne $local) {
+        Write-Host "  note: tag is at $local, HEAD is $head (move the tag if this is a release)" -ForegroundColor DarkYellow
+      }
     }
   }
 
