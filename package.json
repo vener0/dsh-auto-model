@@ -1,0 +1,67 @@
+{
+  "name": "dsh-auto-model",
+  "version": "3.0.1",
+  "description": "Auto model mode for DeepSeek Harness: a main model reads the sub-model catalog (parameters, input/output types, capability tags) and routes each user turn to the best sub model. The plugin only routes — tools, scripts and approvals keep using the session's normal mechanisms.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "auto",
+    "router",
+    "model-routing",
+    "llm"
+  ],
+  "license": "MIT",
+  "author": "",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "icon": "./icon.svg",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "dsh": "^0.2.1-rc.2"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/router.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-settings-general"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@deepseek-ai/schemastery": "^3.18.5",
+    "@standard-schema/spec": "^1.1.0"
+  }
+}

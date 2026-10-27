@@ -1,0 +1,22 @@
+# The "Auto 模型" bundle: one Host row that registers the synthetic `auto`
+# provider plus its browser settings page. The row id is also the settings
+# namespace the page edits.
+#
+# Bundle defaults are intentionally empty: every deployment configures its own
+# main model and sub-model list under Settings → 自动模型 (stored as an override
+# of this row in the profile's cordis.patch.yml).
+- insert:
+    - id: auto-model
+      name: 'dsh-auto-model'
+      config:
+        mainProvider: ''
+        mainModel: ''
+        subModels: []
+        customTags: []
+        preferFreeModels: false
+        fallbackProvider: ''
+        fallbackModel: ''
+        contextWindow: 0
+        maxTokens: 0
+        showRoute: true
+        exposeApiKeys: false

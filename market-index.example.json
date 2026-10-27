@@ -1,0 +1,72 @@
+{
+  "format": 1,
+  "title": {
+    "en": "My DSH Plugins",
+    "zh": "我的 DSH 插件"
+  },
+  "description": {
+    "en": "Plugin index served over HTTPS; add its URL in Plugins → Discover → Index sources.",
+    "zh": "通过 HTTPS 托管的插件索引；在 Plugins → Discover → Index sources 中添加该 URL。"
+  },
+  "metadata": {
+    "categories": {
+      "routing": {
+        "title": {
+          "en": "Routing",
+          "zh": "路由"
+        }
+      }
+    },
+    "labels": {
+      "free": {
+        "title": {
+          "en": "Free",
+          "zh": "免费"
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-auto-model",
+      "title": {
+        "en": "Auto Model",
+        "zh": "自动模型"
+      },
+      "description": {
+        "en": "A main model routes each user turn to the best configured sub model, with capability tags, free-model preference and graceful fallback.",
+        "zh": "由主模型为每个用户轮次选择最合适的副模型，支持能力标签、免费优先与失败兜底。"
+      },
+      "author": "<your name>",
+      "homepage": "https://github.com/<owner>/dsh-auto-model",
+      "repository": {
+        "url": "https://github.com/<owner>/dsh-auto-model"
+      },
+      "icon": "https://raw.githubusercontent.com/<owner>/dsh-auto-model/main/icon.svg",
+      "metadata": {
+        "category": "routing",
+        "keywords": [
+          "auto",
+          "router",
+          "routing",
+          "fallback"
+        ],
+        "labels": [
+          "free"
+        ]
+      },
+      "versions": [
+        {
+          "version": "3.0.1",
+          "publishTimestamp": 1760000000,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": "^0.2.1-rc.2"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Auto Model",
+    "description": "Adds an Auto model: a main model reads the sub-model catalog (parameters, tags and local configuration) and picks the executor. Tags only rank candidates and custom tags are supported."
+  }
+}
