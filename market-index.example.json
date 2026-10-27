@@ -1,19 +1,19 @@
-{
+﻿{
   "format": 1,
   "title": {
     "en": "My DSH Plugins",
-    "zh": "我的 DSH 插件"
+    "zh": "鎴戠殑 DSH 鎻掍欢"
   },
   "description": {
-    "en": "Plugin index served over HTTPS; add its URL in Plugins → Discover → Index sources.",
-    "zh": "通过 HTTPS 托管的插件索引；在 Plugins → Discover → Index sources 中添加该 URL。"
+    "en": "Plugin index served over HTTPS; add its URL in Plugins 鈫?Discover 鈫?Index sources.",
+    "zh": "閫氳繃 HTTPS 鎵樼鐨勬彃浠剁储寮曪紱鍦?Plugins 鈫?Discover 鈫?Index sources 涓坊鍔犺 URL銆?
   },
   "metadata": {
     "categories": {
       "routing": {
         "title": {
           "en": "Routing",
-          "zh": "路由"
+          "zh": "璺敱"
         }
       }
     },
@@ -21,7 +21,7 @@
       "free": {
         "title": {
           "en": "Free",
-          "zh": "免费"
+          "zh": "鍏嶈垂"
         }
       }
     }
@@ -31,18 +31,18 @@
       "name": "dsh-auto-model",
       "title": {
         "en": "Auto Model",
-        "zh": "自动模型"
+        "zh": "鑷姩妯″瀷"
       },
       "description": {
         "en": "A main model routes each user turn to the best configured sub model, with capability tags, free-model preference and graceful fallback.",
-        "zh": "由主模型为每个用户轮次选择最合适的副模型，支持能力标签、免费优先与失败兜底。"
+        "zh": "鐢变富妯″瀷涓烘瘡涓敤鎴疯疆娆￠€夋嫨鏈€鍚堥€傜殑鍓ā鍨嬶紝鏀寔鑳藉姏鏍囩銆佸厤璐逛紭鍏堜笌澶辫触鍏滃簳銆?
       },
-      "author": "<your name>",
-      "homepage": "https://github.com/<owner>/dsh-auto-model",
+      "author": "vener0",
+      "homepage": "https://github.com/vener0/dsh-auto-model",
       "repository": {
-        "url": "https://github.com/<owner>/dsh-auto-model"
+        "url": "https://github.com/vener0/dsh-auto-model"
       },
-      "icon": "https://raw.githubusercontent.com/<owner>/dsh-auto-model/main/icon.svg",
+      "icon": "https://raw.githubusercontent.com/vener0/dsh-auto-model/main/icon.svg",
       "metadata": {
         "category": "routing",
         "keywords": [
@@ -70,3 +70,4 @@
     }
   ]
 }
+

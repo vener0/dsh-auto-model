@@ -36,7 +36,7 @@ dsh plugin --profile web add dsh-auto-model
 Git 源安装（可用于预发布测试）：
 
 ```bash
-dsh plugin --profile web add github:<owner>/<repo>#<40位commit>
+dsh plugin --profile web add github:vener0/dsh-auto-model#<40位commit>
 ```
 
 ## 4. 进入市场
@@ -48,7 +48,7 @@ dsh plugin --profile web add github:<owner>/<repo>#<40位commit>
 1. Fork 该仓库；
 2. 在插件列表里按格式加一行：
    ```markdown
-   - [dsh-auto-model](https://github.com/<owner>/dsh-auto-model) - 由主模型为每个任务选择副模型（自动路由、标签、失败兜底）。
+   - [dsh-auto-model](https://github.com/vener0/dsh-auto-model) - 由主模型为每个任务选择副模型（自动路由、标签、失败兜底）。
    ```
 3. 提交 PR，合并后 dshmarket 与站点一般一天内自动收录。
 

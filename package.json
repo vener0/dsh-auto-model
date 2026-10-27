@@ -12,14 +12,14 @@
     "llm"
   ],
   "license": "MIT",
-  "author": "",
-  "homepage": "",
+  "author": "vener0",
+  "homepage": "https://github.com/vener0/dsh-auto-model",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/vener0/dsh-auto-model.git"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/vener0/dsh-auto-model/issues"
   },
   "icon": "./icon.svg",
   "type": "module",

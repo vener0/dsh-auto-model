@@ -1,6 +1,6 @@
 # 自动模型（Auto Model · 主模型调度版）
 
-[![test](https://github.com/<owner>/dsh-auto-model/actions/workflows/test.yml/badge.svg)](https://github.com/<owner>/dsh-auto-model/actions/workflows/test.yml)
+[![test](https://github.com/vener0/dsh-auto-model/actions/workflows/test.yml/badge.svg)](https://github.com/vener0/dsh-auto-model/actions/workflows/test.yml)
 [![npm](https://img.shields.io/npm/v/dsh-auto-model)](https://www.npmjs.com/package/dsh-auto-model)
 [![license](https://img.shields.io/npm/l/dsh-auto-model)](LICENSE)
 
@@ -25,7 +25,7 @@
 dsh plugin --profile web add dsh-auto-model
 
 # GitHub（可固定 commit）
-dsh plugin --profile web add github:<owner>/dsh-auto-model#<40位commit>
+dsh plugin --profile web add github:vener0/dsh-auto-model#<40位commit>
 ```
 
 装完**重启 Harness**（Host 插件在启动时加载；只刷新页面不足以换掉旧的 Host 逻辑）。
