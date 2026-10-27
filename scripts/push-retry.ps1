@@ -17,7 +17,8 @@ param(
   [string]$Tag = 'v3.0.1',
   [int]$IntervalSeconds = 10,
   [int]$MaxAttempts = 0,
-  [switch]$SkipMain
+  [switch]$SkipMain,
+  [switch]$ForceMain
 )
 
 $ErrorActionPreference = 'Continue'
@@ -66,7 +67,10 @@ while ($true) {
   $ok = $true
 
   if (-not $SkipMain) {
-    $mainResult = Run-Git -GitArgs @('push', 'origin', $Branch)
+    $mainArgs = @('push')
+    if ($ForceMain) { $mainArgs += '-f' }
+    $mainArgs += @('origin', $Branch)
+    $mainResult = Run-Git -GitArgs $mainArgs
     if ($mainResult.Code -ne 0) {
       $ok = $false
       Write-Host "  main push failed" -ForegroundColor Yellow
