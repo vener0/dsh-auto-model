@@ -1,4 +1,4 @@
-﻿{
+{
   "format": 1,
   "title": {
     "en": "My DSH Plugins",
@@ -60,7 +60,9 @@
           "version": "3.0.1",
           "publishTimestamp": 1760000000,
           "source": {
-            "type": "npm"
+            "type": "git",
+            "url": "https://github.com/vener0/dsh-auto-model",
+            "commit": "<40位commit>"
           },
           "engines": {
             "dsh": "^0.2.1-rc.2"

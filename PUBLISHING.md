@@ -1,26 +1,26 @@
 # 发布指南
 
-本仓库已按 DSH 组合包（bundle）规范准备就绪，可发布到 npm 并提交到社区市场。
+本仓库按 DSH 组合包（bundle）规范准备就绪，通过 GitHub 分发，可提交到社区插件市场。
 
-## 发布到 npm
+## 发布新版本
+
+1. 更新 `package.json` 的 `version` 和 `CHANGELOG.md`；
+2. 提交并打 tag：
+   ```bash
+   git tag v<version>
+   git push origin main
+   git push origin v<version>
+   ```
+3. 在 GitHub 仓库 **Releases** 页面基于该 tag 创建 Release，附上更新说明（可选但推荐）。
+
+安装方式（用户侧）：
 
 ```bash
-npm login
-npm publish --access public
-```
+# 跟随 main
+dsh plugin --profile web add github:vener0/dsh-auto-model
 
-验证：
-
-```bash
-dsh plugin --profile web add dsh-auto-model
-```
-
-发布前确认 `engines.dsh` 覆盖目标 DSH 版本，`npm test` 通过。
-
-发布成功后，可在 README 顶部补回 npm 版本徽章：
-
-```markdown
-[![npm](https://img.shields.io/npm/v/dsh-auto-model)](https://www.npmjs.com/package/dsh-auto-model)
+# 固定 commit（推荐）
+dsh plugin --profile web add github:vener0/dsh-auto-model#<40位commit>
 ```
 
 ## 进入市场
@@ -38,11 +38,11 @@ dsh plugin --profile web add dsh-auto-model
 
 ### dsh.so
 
-打开 <https://www.dsh.so/zh/submit/>，粘贴仓库或 npm 包名，检查器会校验格式、许可证、README 并做安全扫描；通过后提交。
+打开 <https://www.dsh.so/zh/submit/>，粘贴 GitHub 仓库地址，检查器会校验格式、许可证、README 并做安全扫描；通过后提交。
 
 ### 内置 Discover（可选）
 
-DSH 的 Discover 读取用户配置的 format-1 索引。把 `market-index.example.json` 改成真实域名/时间戳后托管到任意 HTTPS 静态位置，用户在 **Plugins → Discover → Index sources** 添加该 URL 即可。
+DSH 的 Discover 读取用户配置的 format-1 索引。把 `market-index.example.json` 里的 GitHub 地址/commit 填好，托管到任意 HTTPS 静态位置，用户在 **Plugins → Discover → Index sources** 添加该 URL 即可。
 
 ## 版本
 
@@ -52,7 +52,7 @@ DSH 的 Discover 读取用户配置的 format-1 索引。把 `market-index.examp
 
 ## 推送重试
 
-GitHub 连接不稳时，用仓库内的重试脚本反复推送，直到远端 tag 指向本地 HEAD：
+GitHub 连接不稳时，用仓库内的重试脚本反复推送，直到远端 tag 指向本地 tag：
 
 ```powershell
 pwsh -File scripts/push-retry.ps1

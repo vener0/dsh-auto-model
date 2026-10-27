@@ -19,13 +19,17 @@
 
 ## 安装
 
+通过 GitHub 安装（暂未发布到 npm）：
+
 ```bash
-dsh plugin --profile web add dsh-auto-model
-# 或固定 commit：
+# 跟随 main
+dsh plugin --profile web add github:vener0/dsh-auto-model
+
+# 固定 commit（推荐，避免分支变动）
 dsh plugin --profile web add github:vener0/dsh-auto-model#<40位commit>
 ```
 
-安装后**重启 Harness**。
+在 GitHub 仓库的 **Commits** 页面可以复制完整 40 位 commit SHA。安装后**重启 Harness**。
 
 ## 使用
 
